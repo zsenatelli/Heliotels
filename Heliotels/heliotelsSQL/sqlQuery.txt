@@ -1,0 +1,50 @@
+CREATE DATABASE 20190305023;
+
+CREATE TABLE oteller (
+  otelID INT AUTO_INCREMENT PRIMARY KEY,
+  otelisim VARCHAR(45) NOT NULL,
+  otelkonum VARCHAR(45) NOT NULL,
+  kişiSayısı VARCHAR(45) NOT NULL,
+  puan VARCHAR(45) NOT NULL,
+  fiyat VARCHAR(45) NOT NULL
+);
+
+INSERT INTO oteller (otelisim, otelkonum, kişiSayısı, puan, fiyat)
+VALUES
+  ('Hilton Dalaman', 'Dalaman', '10000', '4.8', '9500'),
+  ('Aqua Fantasy', 'Antalya', '5500', '4.2', '8500'),
+  ('Orka Lotus', 'İçmeler', '2000', '4.7', '7000'),
+  ('Richmond', 'Pamucak', '12000', '4.1', '5000'),
+  ('SunCity', 'Ölüdeniz', '7000', '4.4', '5500'),
+  ('Jiva', 'Fethiye', '6000', '4.5', '6000'),
+  ('Club Med', 'Bodrum', '4000', '4.2', '8000'),
+  ('Ilıca', 'Çeşme', '2500', '4', '5700');
+
+CREATE TABLE kullanicibilgileri (
+  ID INT AUTO_INCREMENT PRIMARY KEY,
+  TC VARCHAR(11) NOT NULL,
+  isim VARCHAR(45) NOT NULL,
+  soyisim VARCHAR(45) NOT NULL,
+  cinsiyet VARCHAR(10) NOT NULL,
+  doğumYılı VARCHAR(15) NOT NULL,
+  şehir VARCHAR(45) NOT NULL,
+  şifre VARCHAR(45) NOT NULL
+);
+
+INSERT INTO kullanicibilgileri (TC, isim, soyisim, cinsiyet, doğumYılı, şehir, şifre)
+VALUES ('13455434688', 'Zeynep Sena', 'Telli', 'Kadın', 2001, 'İstanbul', '123');
+
+CREATE TABLE kredikartlari (
+  kartNumarasi VARCHAR(45) NOT NULL PRIMARY KEY,
+  TC VARCHAR(45) NOT NULL,
+  isimSoyisim VARCHAR(45) NOT NULL,
+  sonKullanma VARCHAR(45) NOT NULL,
+  CVV VARCHAR(45) NOT NULL
+);
+
+INSERT INTO kredikartlari (kartNumarasi, TC, isimSoyisim, sonKullanma, CVV)
+VALUES ('1231244321', '13455434688', 'Zeynep Sena Telli', '11/25', '262');
+
+SELECT * FROM oteller;
+SELECT * FROM kullanicibilgileri;
+SELECT * FROM kredikartlari;
